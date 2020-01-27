@@ -16,7 +16,7 @@ jobs:
     name: Project_Building
     runs-on: ubuntu-latest
     timeout-minutes: 3
-    
+
     steps:
 
       - name: Checkout project repo from GitHub
@@ -53,7 +53,7 @@ jobs:
       - name: List contents of build directory
         run: ls -al ${{runner.workspace}}/build
 
-      - name: run
+      - name: Run the project
         working-directory: ${{runner.workspace}}/build
         shell: bash
         run: ./$EXE_NAME $INPUT_FILES $OUTPUT_FILES
